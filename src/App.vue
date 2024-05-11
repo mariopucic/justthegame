@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <main>
+      <router-view></router-view>
+      <PasswordInput></PasswordInput>
+      <Buttons></Buttons>
+      <EmailInput></EmailInput>
+      <ForgotPassword></ForgotPassword>
+    </main>
+
+    <div class="center">
+      <img src="Logo/Logo.png" alt="Logo">
+    </div>
+
+    <header>
+      <h1>Dobro došli</h1>
+    </header>
+
+    <div class="center gray-text">
+      Nisi još registriran?
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import PasswordInput from './components/PasswordInput.vue';
+import Buttons from './components/Buttons.vue';
+import EmailInput from './components/EmailInput.vue';
+import ForgotPassword from './components/ForgotPassword.vue';
+
+export default {
+  name: 'Justthegame',
+  components: {
+    PasswordInput,
+    Buttons,
+    EmailInput,
+    ForgotPassword
+  },
 }
+</script>
 
-nav {
-  padding: 30px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
